@@ -1,11 +1,11 @@
-from django.urls import path, include, re_path
+from django.urls import path
 from django.contrib.auth import views as auth_views
 from . import views
 
 app_name = 'accounts'
 
-url_patterns[
-    re_path(r'login/$', auth_views.LoginView.as_view(template_name='accounts/Login.html', name='login')),
-    re_path(r'logout/$', auth_views.LogoutView.as_view(), name='logout'),
-    re_path(r'signup/$', views.SignUp.as_view(), name='signup'),
+urlpatterns = [
+    path('login/', auth_views.LoginView.as_view(template_name="accounts/Login.html"),name='login'),
+    path('logout/', auth_views.LogoutView.as_view(), name="logout"),
+    path('signup/', views.SignUp.as_view(), name="signup"),
 ]
