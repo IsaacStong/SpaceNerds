@@ -24,4 +24,6 @@ urlpatterns = [
     re_path(r'^accounts/', include('django.contrib.auth.urls')),
     re_path(r'^test/$', views.TestPage.as_view(), name='test'),
     re_path(r'^thanks/$', views.ThanksPage.as_view(), name='thanks'),
+    path('posts/', include("posts.urls", namespace="posts")),
+    path('groups/',include("groups.urls", namespace="groups")),
 ]
