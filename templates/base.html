@@ -23,10 +23,10 @@
 
   </head>
   <body>
+
     <nav class="navbar mynav" role="navigation" id='navbar'>
       <div class="container">
         <a class="navbar-brand mynav" href="{% url 'home' %}">Space Nerds</a>
-
         <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
               <li><a href="{% url 'posts:create' %}">Post</a></li>
@@ -52,4 +52,8 @@
     </div>
 
   </body>
+  <canvas id="canvas"></canvas>
+  <script type="text/javascript" src="{% static 'SpaceNerds/js/master.js'%}">
+
+  </script>
 </html>
